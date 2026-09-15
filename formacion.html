@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formación — Gabriel Sánchez</title>
+  <meta name="description" content="Formación académica y cursos de Gabriel Alfonso Sánchez Martínez.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="rail">
+    <div class="rail-top">
+      <img class="rail-foto" src="img/foto.jpg" alt="Foto de Gabriel Alfonso Sánchez Martínez">
+      <p class="rail-nombre">Gabriel Sánchez</p>
+      <p class="rail-rol">Soporte técnico &amp; desarrollo web</p>
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a  href="index.html" aria-label="Perfil">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg>
+          <span>Perfil</span>
+        </a></li>
+        <li><a class="activo" href="formacion.html" aria-label="Formación">
+          <svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5-10-5z"></path><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"></path></svg>
+          <span>Formación</span>
+        </a></li>
+        <li><a  href="experiencia.html" aria-label="Experiencia">
+          <svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="1.5"></rect><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><path d="M3 13h18"></path></svg>
+          <span>Experiencia</span>
+        </a></li>
+        <li><a  href="proyectos.html" aria-label="Proyectos">
+          <svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5z"></path><path d="M2 13l10 5 10-5"></path></svg>
+          <span>Proyectos</span>
+        </a></li>
+        <li><a  href="contacto.html" aria-label="Contacto">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"></rect><path d="M3 6.5l9 6 9-6"></path></svg>
+          <span>Contacto</span>
+        </a></li>
+      </ul>
+    </nav>
+    <p class="estado"><span class="punto"></span><span class="texto-estado">Disponible para prácticas</span></p>
+  </header>
+
+  <main class="contenido">
+    <h1 class="titulo-pagina">Formación</h1>
+    <p class="entrada">
+      Estudios formales y programas de formación en desarrollo de software.
+    </p>
+
+    <h2>Educación</h2>
+
+    <article class="bloque card border-0">
+      <p class="fecha">Desde el primer semestre de 2025 · En curso</p>
+      <h3>Universidad de Cartagena — CTEV</h3>
+      <p>
+        Centro Tecnológico para la Formación Virtual y a Distancia. Cursando, entre otras,
+        Fundamentos de Desarrollo de Software Web y Ecuaciones Diferenciales.
+      </p>
+    </article>
+
+    <article class="bloque card border-0">
+      <p class="fecha">Programa completado</p>
+      <h3>Programadores para la Paz</h3>
+      <p>
+        Formación en desarrollo full-stack con enfoque en ciudadanía digital: Node.js y
+        Express, bases de datos, control de versiones con Git y GitHub, y un proyecto final
+        propio. El programa conecta la programación con la participación comunitaria y la
+        cultura de paz.
+      </p>
+      <ul class="tecnologias">
+        <li class="badge rounded-pill">Node.js</li>
+        <li class="badge rounded-pill">Express</li>
+        <li class="badge rounded-pill">MongoDB</li>
+        <li class="badge rounded-pill">React</li>
+        <li class="badge rounded-pill">Git / GitHub</li>
+      </ul>
+    </article>
+
+    <article class="bloque card border-0">
+      <p class="fecha">Graduado el 6 de diciembre de 2024</p>
+      <h3>Bachiller académico</h3>
+      <p>Institución Educativa Técnica Crisanto Luque · Turbaco, Bolívar.</p>
+    </article>
+
+    <h2>Aprendizaje por cuenta propia</h2>
+    <p>
+      Buena parte de lo que sé lo aprendí construyendo. Estos son los temas que he estudiado
+      por fuera del aula para poder terminar mis proyectos:
+    </p>
+    <ul>
+      <li>Autenticación con JWT y control de acceso por roles.</li>
+      <li>Documentación de APIs con Swagger / OpenAPI.</li>
+      <li>Pruebas automatizadas con Jest y Supertest.</li>
+      <li>Integración continua con GitHub Actions.</li>
+      <li>Despliegue en la nube con Railway y Vercel.</li>
+    </ul>
+
+    <footer class="pie">
+      <p><a href="index.html">Volver al perfil</a></p>
+    </footer>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

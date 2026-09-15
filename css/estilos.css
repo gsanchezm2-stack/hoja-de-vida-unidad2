@@ -1,0 +1,530 @@
+/* ============================================================
+   Hoja de vida — Gabriel Alfonso Sánchez Martínez
+   Actividad Unidad 1 · Fundamentos de Desarrollo de Software Web
+   ============================================================ */
+
+/* 1. Paleta — gris difuminado con un solo acento cálido
+   ------------------------------------------------------------ */
+:root {
+  --negro: #0d0f12;
+  --carbon: #1a1e23;
+  --grafito: #2b3137;
+  --plomo: #57616a;
+  --niebla: #97a1aa;
+  --humo: #ccd2d7;
+  --bruma: #e7e9eb;
+  --papel: #f5f6f7;
+  --superficie: #ffffff;
+  --tinta: #14181c;
+  --texto: #4b555e;
+
+  --acento: #f2a03d;
+  --acento-suave: rgba(242, 160, 61, 0.16);
+  --exito: #4f9d6e;
+  --error: #c1543a;
+
+  --bs-body-font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  --bs-link-color: #f2a03d;
+  --bs-link-hover-color: #14181c;
+
+  --fuente-titulo: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --fuente-texto: "Newsreader", Georgia, "Times New Roman", serif;
+
+  --rail-ancho: 280px;
+  --rail-angosto: 84px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--papel) 0%, var(--bruma) 100%);
+  background-attachment: fixed;
+  color: var(--texto);
+  font-family: var(--fuente-texto);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--acento); }
+
+/* 2. Barra lateral — siempre vertical, con degradado de grises
+   ------------------------------------------------------------ */
+.rail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--rail-angosto);
+  height: 100vh;
+  background: linear-gradient(165deg, var(--negro) 0%, var(--carbon) 55%, var(--grafito) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 0;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.rail-top {
+  text-align: center;
+  padding: 0 10px 18px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.rail-foto {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  margin: 0 auto 10px auto;
+  border: 2px solid rgba(242, 160, 61, 0.55);
+  filter: grayscale(45%) contrast(1.05);
+}
+
+.rail-nombre,
+.rail-rol {
+  display: none;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  flex: 1;
+}
+
+.menu li { margin-bottom: 2px; }
+
+.menu a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--fuente-titulo);
+  font-size: 10.5px;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  color: var(--humo);
+  padding: 11px 4px;
+  border-left: 3px solid transparent;
+  text-align: center;
+}
+
+.menu a svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+}
+
+.menu a:hover { color: var(--superficie); background: rgba(255, 255, 255, 0.04); }
+
+.menu .activo {
+  color: var(--acento);
+  border-left-color: var(--acento);
+  background: rgba(242, 160, 61, 0.08);
+}
+
+.estado {
+  font-size: 10px;
+  color: var(--niebla);
+  text-align: center;
+  margin: 14px 0 0 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+}
+
+.punto {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--exito);
+  margin-right: 0;
+}
+
+.estado span.texto-estado { display: none; }
+
+/* 3. Contenido
+   ------------------------------------------------------------ */
+.contenido {
+  margin-left: var(--rail-angosto);
+  padding: 40px 24px 70px 24px;
+  max-width: 720px;
+}
+
+.titulo-pagina {
+  font-family: var(--fuente-titulo);
+  font-size: 36px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--tinta);
+  margin: 0 0 6px 0;
+}
+
+.entrada {
+  font-size: 19px;
+  margin: 0 0 28px 0;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--humo);
+}
+
+h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--tinta);
+  margin: 36px 0 12px 0;
+}
+
+h3 {
+  font-family: var(--fuente-titulo);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--tinta);
+  margin: 0 0 2px 0;
+}
+
+p { margin: 0 0 14px 0; }
+
+/* 4. Portada: foto + ficha de datos
+   ------------------------------------------------------------ */
+.portada {
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.foto {
+  width: 150px;
+  border-radius: 6px;
+  filter: grayscale(35%);
+  box-shadow: 0 8px 24px rgba(13, 15, 18, 0.18);
+}
+
+.ficha { margin: 0; flex: 1 1 280px; }
+
+.ficha dt {
+  font-family: var(--fuente-titulo);
+  font-size: 12.5px;
+  text-transform: none;
+  color: var(--plomo);
+  margin-top: 10px;
+}
+
+.ficha dd {
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--humo);
+  color: var(--tinta);
+  font-size: 17px;
+}
+
+/* 5. Bloques de contenido
+   ------------------------------------------------------------ */
+.bloque {
+  background-color: var(--superficie);
+  border: 1px solid var(--humo);
+  border-left: 4px solid var(--acento);
+  border-radius: 4px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 10px rgba(13, 15, 18, 0.04);
+}
+
+.fecha {
+  font-family: var(--fuente-titulo);
+  font-size: 13px;
+  color: var(--plomo);
+  margin: 0 0 8px 0;
+}
+
+.bloque p:last-child { margin-bottom: 0; }
+
+ul { padding-left: 20px; margin: 0 0 14px 0; }
+li { margin-bottom: 6px; }
+
+/* 6. Etiquetas de tecnologías
+   ------------------------------------------------------------ */
+.tecnologias {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tecnologias li {
+  font-family: var(--fuente-titulo);
+  font-size: 13px;
+  color: var(--tinta);
+  background-color: var(--papel);
+  border: 1px solid var(--humo);
+  border-radius: 3px;
+  padding: 3px 9px;
+  margin: 0;
+}
+
+/* 7. Tarjetas de proyecto con imagen
+   ------------------------------------------------------------ */
+.proyecto {
+  background-color: var(--superficie);
+  border: 1px solid var(--humo);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 10px rgba(13, 15, 18, 0.04);
+}
+
+.proyecto img { width: 100%; border-bottom: 1px solid var(--humo); }
+.proyecto-texto { padding: 18px 20px; }
+
+/* 8. Tabla de habilidades
+   ------------------------------------------------------------ */
+table { width: 100%; border-collapse: collapse; font-size: 17px; }
+
+caption {
+  text-align: left;
+  font-family: var(--fuente-titulo);
+  font-size: 13px;
+  color: var(--plomo);
+  padding-bottom: 8px;
+}
+
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--humo); }
+
+th {
+  font-family: var(--fuente-titulo);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tinta);
+  background-color: var(--superficie);
+}
+
+/* 9. Formulario de contacto
+   ------------------------------------------------------------ */
+.campo { margin-bottom: 16px; }
+
+label {
+  display: block;
+  font-family: var(--fuente-titulo);
+  font-size: 14px;
+  color: var(--tinta);
+  margin-bottom: 4px;
+}
+
+input, textarea {
+  width: 100%;
+  font-family: var(--fuente-texto);
+  font-size: 17px;
+  color: var(--tinta);
+  background-color: var(--superficie);
+  border: 1px solid var(--humo);
+  border-radius: 4px;
+  padding: 9px 10px;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--acento);
+  outline-offset: 1px;
+}
+
+.boton {
+  font-family: var(--fuente-titulo);
+  font-size: 15px;
+  color: var(--negro);
+  background-color: var(--acento);
+  border: none;
+  border-radius: 4px;
+  padding: 11px 22px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.boton:hover { background-color: var(--tinta); color: var(--superficie); }
+
+/* 10. Pie de página
+   ------------------------------------------------------------ */
+.pie {
+  border-top: 1px solid var(--humo);
+  margin-top: 40px;
+  padding-top: 14px;
+  font-size: 15px;
+}
+
+a:focus-visible, .boton:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 3px;
+}
+
+/* 9b. Bootstrap: ajustar componentes a la paleta del sitio
+   ------------------------------------------------------------ */
+.tecnologias .badge {
+  font-family: var(--fuente-titulo);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--tinta);
+  background-color: var(--papel) !important;
+  border: 1px solid var(--humo);
+}
+
+.table-responsive { margin-bottom: 14px; }
+
+.table > :not(caption) > * > * { background-color: transparent; }
+
+.card.bloque, .card.proyecto {
+  background-color: var(--superficie);
+  border-color: var(--humo);
+}
+
+.card.bloque:hover, .card.proyecto:hover {
+  box-shadow: 0 6px 20px rgba(13, 15, 18, 0.09);
+  transition: box-shadow 0.25s ease;
+}
+
+.form-label { font-family: var(--fuente-titulo); font-size: 14px; color: var(--tinta); }
+
+.form-control {
+  font-family: var(--fuente-texto);
+  font-size: 17px;
+  border: 1px solid var(--humo);
+}
+
+.form-control:focus {
+  border-color: var(--acento);
+  box-shadow: 0 0 0 0.2rem var(--acento-suave);
+}
+
+.form-control.is-invalid { border-color: var(--error); }
+.form-control.is-valid { border-color: var(--exito); }
+.invalid-feedback { color: var(--error); font-size: 13.5px; }
+.valid-feedback { color: var(--exito); font-size: 13.5px; }
+
+.alert-exito {
+  background-color: rgba(79, 157, 110, 0.12);
+  border: 1px solid var(--exito);
+  color: #2f5d40;
+  font-family: var(--fuente-texto);
+}
+
+/* 12. Animaciones y dinamismo (Unidad 2)
+   ------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.reveal.en-vista {
+  animation: aparecer 0.6s ease forwards;
+}
+
+@keyframes aparecer {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.menu a { transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease; }
+.boton, .btn { transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease; }
+.boton:active, .btn:active { transform: scale(0.97); }
+
+#volver-arriba {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--acento);
+  color: var(--negro);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(13, 15, 18, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  z-index: 20;
+  cursor: pointer;
+}
+
+#volver-arriba.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#volver-arriba:hover { background-color: var(--tinta); color: var(--superficie); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; animation: none; }
+  #volver-arriba { transition: none; }
+}
+
+/* 11. Pantallas medianas y grandes: la barra se expande y muestra texto
+   ------------------------------------------------------------ */
+@media (min-width: 640px) {
+  .rail {
+    width: var(--rail-ancho);
+    align-items: stretch;
+    padding: 36px 22px;
+  }
+
+  .rail-top { text-align: left; padding-bottom: 20px; }
+
+  .rail-foto {
+    width: 68px;
+    height: 68px;
+    margin: 0 0 14px 0;
+  }
+
+  .rail-nombre {
+    display: block;
+    font-family: var(--fuente-titulo);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--superficie);
+    margin: 0;
+  }
+
+  .rail-rol {
+    display: block;
+    font-size: 13px;
+    color: var(--niebla);
+    margin: 3px 0 0 0;
+  }
+
+  .menu a {
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 14.5px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    border-left: 3px solid transparent;
+  }
+
+  .estado {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .estado span.texto-estado { display: inline; }
+
+  .contenido {
+    margin-left: var(--rail-ancho);
+    padding: 64px 48px 80px 48px;
+  }
+
+  .titulo-pagina { font-size: 48px; }
+}

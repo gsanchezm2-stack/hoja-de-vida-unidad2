@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabriel Sánchez — Hoja de vida</title>
+  <meta name="description" content="Hoja de vida de Gabriel Alfonso Sánchez Martínez, técnico de soporte y desarrollador web en formación.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="rail">
+    <div class="rail-top">
+      <img class="rail-foto" src="img/foto.jpg" alt="Foto de Gabriel Alfonso Sánchez Martínez">
+      <p class="rail-nombre">Gabriel Sánchez</p>
+      <p class="rail-rol">Soporte técnico &amp; desarrollo web</p>
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a class="activo" href="index.html" aria-label="Perfil">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg>
+          <span>Perfil</span>
+        </a></li>
+        <li><a  href="formacion.html" aria-label="Formación">
+          <svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5-10-5z"></path><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"></path></svg>
+          <span>Formación</span>
+        </a></li>
+        <li><a  href="experiencia.html" aria-label="Experiencia">
+          <svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="1.5"></rect><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><path d="M3 13h18"></path></svg>
+          <span>Experiencia</span>
+        </a></li>
+        <li><a  href="proyectos.html" aria-label="Proyectos">
+          <svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5z"></path><path d="M2 13l10 5 10-5"></path></svg>
+          <span>Proyectos</span>
+        </a></li>
+        <li><a  href="contacto.html" aria-label="Contacto">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"></rect><path d="M3 6.5l9 6 9-6"></path></svg>
+          <span>Contacto</span>
+        </a></li>
+      </ul>
+    </nav>
+    <p class="estado"><span class="punto"></span><span class="texto-estado">Disponible para prácticas</span></p>
+  </header>
+
+  <main class="contenido">
+    <h1 class="titulo-pagina">Gabriel Sánchez</h1>
+    <p class="entrada">
+      Técnico de soporte en retail y estudiante de desarrollo de software.
+      Trabajo con equipos de cómputo por el día y construyo aplicaciones web por la noche.
+    </p>
+
+    <div class="row g-4 portada">
+      <div class="col-12 col-md-4">
+        <img class="foto" src="img/foto.jpg" alt="Foto de perfil de Gabriel Alfonso Sánchez Martínez">
+      </div>
+      <div class="col-12 col-md-8">
+        <dl class="ficha mb-0">
+          <dt>Nombre completo</dt>
+          <dd>Gabriel Alfonso Sánchez Martínez</dd>
+          <dt>Ciudad</dt>
+          <dd>Cartagena, Bolívar, Colombia</dd>
+          <dt>Cargo actual</dt>
+          <dd>Técnico retail en Softteam</dd>
+          <dt>Estudios</dt>
+          <dd>Universidad de Cartagena — CTEV</dd>
+          <dt>GitHub</dt>
+          <dd><a href="https://github.com/gsanchezm2-stack">gsanchezm2-stack</a></dd>
+        </dl>
+      </div>
+    </div>
+
+    <h2>Sobre mí</h2>
+    <p>
+      Empecé arreglando computadores y terminé queriendo entender también el software que
+      corre dentro de ellos. Hoy hago mantenimiento de equipos en el sector retail, y al
+      mismo tiempo desarrollo aplicaciones web completas: base de datos, API y la interfaz
+      que ve el usuario.
+    </p>
+    <p>
+      Me interesa el software que resuelve problemas concretos de la gente: control de
+      inventario para un negocio pequeño, un canal para que un barrio reporte lo que pasa en
+      su calle. La tecnología me gusta cuando sirve para que una comunidad se organice mejor.
+    </p>
+
+    <h2>Lo que hago</h2>
+    <ul>
+      <li>Mantenimiento preventivo y correctivo de equipos de cómputo, periféricos y redes.</li>
+      <li>Desarrollo de APIs REST con Node.js y Express, y con Java y Spring Boot.</li>
+      <li>Interfaces web con React y aplicaciones móviles con React Native.</li>
+      <li>Bases de datos MongoDB y PostgreSQL.</li>
+      <li>Control de versiones con Git y despliegue en Railway y Vercel.</li>
+    </ul>
+
+    <h2>Hacia dónde voy</h2>
+    <p>
+      Busco una práctica o un primer puesto como desarrollador junior donde pueda aportar lo
+      que ya construí por mi cuenta y seguir aprendiendo con un equipo. Mientras tanto, cada
+      proyecto que hago lo llevo hasta el final: probado, documentado y publicado.
+    </p>
+
+    <footer class="pie">
+      <p>Hoja de vida personal · Actividad de la Unidad 1 · Fundamentos de Desarrollo de Software Web</p>
+    </footer>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
